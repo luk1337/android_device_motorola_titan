@@ -497,7 +497,7 @@ int BstSensor::readEvents(sensors_event_t *pdata, int count) {
             pdata_cur->type = SENSOR_TYPE_ACCELEROMETER;
             break;
         case SENSORS_GYROSCOPE_HANDLE:
-            pdata_cur->gyro.x = sensor_data.data.gyro.x;
+            pdata_cur->gyro.x = -sensor_data.data.gyro.x;
             pdata_cur->gyro.y = sensor_data.data.gyro.y;
             pdata_cur->gyro.z = sensor_data.data.gyro.z;
             pdata_cur->gyro.status = sensor_data.data.status;
@@ -560,10 +560,10 @@ int BstSensor::readEvents(sensors_event_t *pdata, int count) {
             pdata_cur->type = SENSOR_TYPE_GAME_ROTATION_VECTOR;
             break;
         case SENSORS_GYROSCOPE_UNCALIBRATED_HANDLE:
-            pdata_cur->uncalibrated_gyro.x_uncalib = sensor_data.data.uncalibrated_gyro.x_uncalib;
+            pdata_cur->uncalibrated_gyro.x_uncalib = -sensor_data.data.uncalibrated_gyro.x_uncalib;
             pdata_cur->uncalibrated_gyro.y_uncalib = sensor_data.data.uncalibrated_gyro.y_uncalib;
             pdata_cur->uncalibrated_gyro.z_uncalib = sensor_data.data.uncalibrated_gyro.z_uncalib;
-            pdata_cur->uncalibrated_gyro.x_bias = sensor_data.data.uncalibrated_gyro.x_bias;
+            pdata_cur->uncalibrated_gyro.x_bias = -sensor_data.data.uncalibrated_gyro.x_bias;
             pdata_cur->uncalibrated_gyro.y_bias = sensor_data.data.uncalibrated_gyro.y_bias;
             pdata_cur->uncalibrated_gyro.z_bias = sensor_data.data.uncalibrated_gyro.z_bias;
             pdata_cur->type = SENSOR_TYPE_GYROSCOPE_UNCALIBRATED;
