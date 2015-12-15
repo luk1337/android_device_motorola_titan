@@ -511,7 +511,7 @@ int BstSensor::readEvents(sensors_event_t *pdata, int count) {
             pdata_cur->type = SENSOR_TYPE_MAGNETIC_FIELD;
             break;
         case SENSORS_ORIENTATION_HANDLE:
-            pdata_cur->orientation.azimuth = sensor_data.data.orientation.azimuth;
+            pdata_cur->orientation.azimuth = 360.0f - sensor_data.data.orientation.azimuth;
             pdata_cur->orientation.pitch = sensor_data.data.orientation.pitch;
             pdata_cur->orientation.roll = sensor_data.data.orientation.roll;
             pdata_cur->orientation.status = sensor_data.data.status;
