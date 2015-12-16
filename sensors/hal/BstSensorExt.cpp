@@ -94,6 +94,8 @@ int BstSensorExt::enableSensor(int en, char *sensor_path, char *enable_mode) {
     int ret = 0;
     int fd;
     char buf[2];
+
+    memset(input_sysfs_path, '\0', sizeof(input_sysfs_path));
     strncpy(input_sysfs_path, sensor_path, strlen(sensor_path));
     input_sysfs_path_len = strlen(input_sysfs_path);
     strncpy(&input_sysfs_path[input_sysfs_path_len], enable_mode, strlen(enable_mode));
